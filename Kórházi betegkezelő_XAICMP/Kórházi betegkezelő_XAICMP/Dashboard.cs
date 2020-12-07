@@ -31,6 +31,8 @@ namespace Kórházi_betegkezelő_XAICMP
             lbl2nyil.ForeColor = System.Drawing.Color.Black;
             lbl3nyil.ForeColor = System.Drawing.Color.Black;
             lbl4nyil.ForeColor = System.Drawing.Color.Black;
+
+            panel1.Visible = true;
         }
 
         private void btnÖsszesPáciens_Click(object sender, EventArgs e)
@@ -52,6 +54,11 @@ namespace Kórházi_betegkezelő_XAICMP
         private void btnKilépés_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Dashboard_Load(object sender, EventArgs e)
+        {
+            panel1.Visible = false;
         }
     }
 }
