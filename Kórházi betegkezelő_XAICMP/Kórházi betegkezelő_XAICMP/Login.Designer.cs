@@ -38,14 +38,14 @@
             // 
             // txtFelhasználónév
             // 
-            this.txtFelhasználónév.Location = new System.Drawing.Point(774, 39);
+            this.txtFelhasználónév.Location = new System.Drawing.Point(492, 34);
             this.txtFelhasználónév.Name = "txtFelhasználónév";
             this.txtFelhasználónév.Size = new System.Drawing.Size(100, 20);
             this.txtFelhasználónév.TabIndex = 0;
             // 
             // txtJelszó
             // 
-            this.txtJelszó.Location = new System.Drawing.Point(774, 88);
+            this.txtJelszó.Location = new System.Drawing.Point(492, 83);
             this.txtJelszó.Name = "txtJelszó";
             this.txtJelszó.PasswordChar = '*';
             this.txtJelszó.Size = new System.Drawing.Size(100, 20);
@@ -54,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(684, 42);
+            this.label1.Location = new System.Drawing.Point(402, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(84, 13);
             this.label1.TabIndex = 2;
@@ -64,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(719, 91);
+            this.label2.Location = new System.Drawing.Point(437, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(39, 13);
             this.label2.TabIndex = 3;
@@ -73,7 +73,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnLogin.Location = new System.Drawing.Point(774, 133);
+            this.btnLogin.Location = new System.Drawing.Point(492, 128);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(100, 37);
             this.btnLogin.TabIndex = 4;
@@ -85,9 +85,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::Kórházi_betegkezelő_XAICMP.Properties.Resources.patient_lying_bed_during_intensive_therapy_74855_7774;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(1030, 652);
+            this.ClientSize = new System.Drawing.Size(879, 594);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

@@ -8,3 +8,4 @@ C:\Users\Bence-Mr.Chatbee\source\repos\IRF_PROJECT\Kórházi betegkezelő_XAICMP
 C:\Users\Bence-Mr.Chatbee\source\repos\IRF_PROJECT\Kórházi betegkezelő_XAICMP\Kórházi betegkezelő_XAICMP\obj\Debug\Kórházi betegkezelő_XAICMP.csproj.CoreCompileInputs.cache
 C:\Users\Bence-Mr.Chatbee\source\repos\IRF_PROJECT\Kórházi betegkezelő_XAICMP\Kórházi betegkezelő_XAICMP\obj\Debug\Kórházi betegkezelő_XAICMP.exe
 C:\Users\Bence-Mr.Chatbee\source\repos\IRF_PROJECT\Kórházi betegkezelő_XAICMP\Kórházi betegkezelő_XAICMP\obj\Debug\Kórházi betegkezelő_XAICMP.pdb
+C:\Users\Bence-Mr.Chatbee\source\repos\IRF_PROJECT\Kórházi betegkezelő_XAICMP\Kórházi betegkezelő_XAICMP\obj\Debug\Kórházi_betegkezelő_XAICMP.Dashboard.resources

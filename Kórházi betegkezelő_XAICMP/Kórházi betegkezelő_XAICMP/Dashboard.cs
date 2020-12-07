@@ -16,5 +16,42 @@ namespace Kórházi_betegkezelő_XAICMP
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lbl1nyil.ForeColor = System.Drawing.Color.Black;
+            lbl2nyil.ForeColor = System.Drawing.Color.Red;
+            lbl3nyil.ForeColor = System.Drawing.Color.Black;
+            lbl4nyil.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void btnPáciens_Click(object sender, EventArgs e)
+        {
+            lbl1nyil.ForeColor = System.Drawing.Color.Red;
+            lbl2nyil.ForeColor = System.Drawing.Color.Black;
+            lbl3nyil.ForeColor = System.Drawing.Color.Black;
+            lbl4nyil.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void btnÖsszesPáciens_Click(object sender, EventArgs e)
+        {
+            lbl1nyil.ForeColor = System.Drawing.Color.Black;
+            lbl2nyil.ForeColor = System.Drawing.Color.Black;
+            lbl3nyil.ForeColor = System.Drawing.Color.Red;
+            lbl4nyil.ForeColor = System.Drawing.Color.Black;
+        }
+
+        private void btnRandomTipp_Click(object sender, EventArgs e)
+        {
+            lbl1nyil.ForeColor = System.Drawing.Color.Black;
+            lbl2nyil.ForeColor = System.Drawing.Color.Black;
+            lbl3nyil.ForeColor = System.Drawing.Color.Black;
+            lbl4nyil.ForeColor = System.Drawing.Color.Red;
+        }
+
+        private void btnKilépés_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
