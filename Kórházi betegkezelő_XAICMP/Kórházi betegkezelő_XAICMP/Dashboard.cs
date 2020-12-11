@@ -17,15 +17,6 @@ namespace Kórházi_betegkezelő_XAICMP
         {
             InitializeComponent();
         }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            lbl1nyil.ForeColor = System.Drawing.Color.Black;
-            lbl2nyil.ForeColor = System.Drawing.Color.Red;
-            lbl3nyil.ForeColor = System.Drawing.Color.Black;
-            lbl4nyil.ForeColor = System.Drawing.Color.Black;
-        }
-
         private void btnPáciens_Click(object sender, EventArgs e)
         {
             lbl1nyil.ForeColor = System.Drawing.Color.Red;
@@ -34,7 +25,22 @@ namespace Kórházi_betegkezelő_XAICMP
             lbl4nyil.ForeColor = System.Drawing.Color.Black;
 
             panel1.Visible = true;
+            panel2.Visible = false;
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            lbl1nyil.ForeColor = System.Drawing.Color.Black;
+            lbl2nyil.ForeColor = System.Drawing.Color.Red;
+            lbl3nyil.ForeColor = System.Drawing.Color.Black;
+            lbl4nyil.ForeColor = System.Drawing.Color.Black;
+
+            //panel1.Visible = false;
+            panel2.Visible = true;
+            
+        }
+
+        
 
         private void btnÖsszesPáciens_Click(object sender, EventArgs e)
         {
@@ -62,6 +68,7 @@ namespace Kórházi_betegkezelő_XAICMP
             // TODO: This line of code loads data into the 'hospitalDataSet.AddPatient' table. You can move, or remove it, as needed.
             this.addPatientTableAdapter.Fill(this.hospitalDataSet.AddPatient);
             panel1.Visible = false;
+            panel2.Visible = false;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -112,6 +119,64 @@ namespace Kórházi_betegkezelő_XAICMP
             this.Validate();
             this.addPatientBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.hospitalDataSet);
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            if (textBox1.Text != "")
+            { 
+
+                int betegid = Convert.ToInt32(textBox1.Text);
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "select * from AddPatient3 where BetegID = " + betegid + "";
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet DS = new DataSet();
+                DA.Fill(DS);
+                dataGridView1.DataSource = DS.Tables[0];
+                
+            }
+        }
+
+        private void btnTovábbiinfómentés_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int betegid = Convert.ToInt32(textBox1.Text);
+                string jelenség = txtjelenség.Text;
+                string diagnózis = txtdiagnózis.Text;
+                string gyógyszer = txtgyógyszer.Text;
+                string kellmutet = combokellmutet.Text;
+                string mutettipus = combomutettipus.Text;
+
+                
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = "insert into PatientMore (betegid, jelenségek, diagnózis, gyógyszer, kellműtét, műtéttípus) values (" + betegid + ", '" + jelenség + "', '" + diagnózis + "', '" + gyógyszer + "', '" + kellmutet + "', '" + mutettipus + "')";
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet DS = new DataSet();
+                DA.Fill(DS);
+                MessageBox.Show("Sikeres adatfelvétel!");
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Valami nem oké...üres mező vagy rossz formátum.");
+            }
+
+
 
         }
     }

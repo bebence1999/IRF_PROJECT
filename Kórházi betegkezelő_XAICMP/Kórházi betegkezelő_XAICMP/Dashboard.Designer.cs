@@ -64,10 +64,28 @@
             this.tableAdapterManager = new Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.TableAdapterManager();
             this.txtbetegid = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtjelenség = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txtdiagnózis = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtgyógyszer = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.combokellmutet = new System.Windows.Forms.ComboBox();
+            this.combomutettipus = new System.Windows.Forms.ComboBox();
+            this.btnTovábbiinfómentés = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addPatientBindingSource)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnPáciens
@@ -214,6 +232,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.txtbetegid);
             this.panel1.Controls.Add(this.label10);
@@ -410,6 +429,165 @@
             this.label9.TabIndex = 28;
             this.label9.Text = "BetegID";
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnTovábbiinfómentés);
+            this.panel2.Controls.Add(this.combomutettipus);
+            this.panel2.Controls.Add(this.combokellmutet);
+            this.panel2.Controls.Add(this.label17);
+            this.panel2.Controls.Add(this.label16);
+            this.panel2.Controls.Add(this.txtgyógyszer);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.txtdiagnózis);
+            this.panel2.Controls.Add(this.label14);
+            this.panel2.Controls.Add(this.txtjelenség);
+            this.panel2.Controls.Add(this.label13);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.label12);
+            this.panel2.Controls.Add(this.label11);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(625, 346);
+            this.panel2.TabIndex = 29;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label11.Location = new System.Drawing.Point(214, 10);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(261, 20);
+            this.label11.TabIndex = 16;
+            this.label11.Text = "További információ a páciensről";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(215, 63);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(56, 13);
+            this.label12.TabIndex = 17;
+            this.label12.Text = "PáciensID";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(277, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 18;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(617, 107);
+            this.dataGridView1.TabIndex = 16;
+            // 
+            // txtjelenség
+            // 
+            this.txtjelenség.Location = new System.Drawing.Point(117, 222);
+            this.txtjelenség.Name = "txtjelenség";
+            this.txtjelenség.Size = new System.Drawing.Size(100, 20);
+            this.txtjelenség.TabIndex = 20;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(55, 225);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(61, 13);
+            this.label13.TabIndex = 19;
+            this.label13.Text = "Jelenségek";
+            // 
+            // txtdiagnózis
+            // 
+            this.txtdiagnózis.Location = new System.Drawing.Point(117, 257);
+            this.txtdiagnózis.Name = "txtdiagnózis";
+            this.txtdiagnózis.Size = new System.Drawing.Size(100, 20);
+            this.txtdiagnózis.TabIndex = 22;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(55, 260);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(53, 13);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "Diagnózis";
+            // 
+            // txtgyógyszer
+            // 
+            this.txtgyógyszer.Location = new System.Drawing.Point(117, 290);
+            this.txtgyógyszer.Name = "txtgyógyszer";
+            this.txtgyógyszer.Size = new System.Drawing.Size(100, 20);
+            this.txtgyógyszer.TabIndex = 24;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(55, 293);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(56, 13);
+            this.label15.TabIndex = 23;
+            this.label15.Text = "Gyógyszer";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(361, 221);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(59, 13);
+            this.label16.TabIndex = 25;
+            this.label16.Text = "Kell műtét?";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(361, 260);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(61, 13);
+            this.label17.TabIndex = 27;
+            this.label17.Text = "Műtét típus";
+            // 
+            // combokellmutet
+            // 
+            this.combokellmutet.FormattingEnabled = true;
+            this.combokellmutet.Items.AddRange(new object[] {
+            "Igen",
+            "Nem"});
+            this.combokellmutet.Location = new System.Drawing.Point(423, 218);
+            this.combokellmutet.Name = "combokellmutet";
+            this.combokellmutet.Size = new System.Drawing.Size(121, 21);
+            this.combokellmutet.TabIndex = 28;
+            this.combokellmutet.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // combomutettipus
+            // 
+            this.combomutettipus.FormattingEnabled = true;
+            this.combomutettipus.Items.AddRange(new object[] {
+            "Sima",
+            "Bonyolult",
+            "Nincs"});
+            this.combomutettipus.Location = new System.Drawing.Point(423, 257);
+            this.combomutettipus.Name = "combomutettipus";
+            this.combomutettipus.Size = new System.Drawing.Size(121, 21);
+            this.combomutettipus.TabIndex = 29;
+            // 
+            // btnTovábbiinfómentés
+            // 
+            this.btnTovábbiinfómentés.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnTovábbiinfómentés.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnTovábbiinfómentés.Location = new System.Drawing.Point(423, 293);
+            this.btnTovábbiinfómentés.Name = "btnTovábbiinfómentés";
+            this.btnTovábbiinfómentés.Size = new System.Drawing.Size(121, 33);
+            this.btnTovábbiinfómentés.TabIndex = 16;
+            this.btnTovábbiinfómentés.Text = "Mentés";
+            this.btnTovábbiinfómentés.UseVisualStyleBackColor = false;
+            this.btnTovábbiinfómentés.Click += new System.EventHandler(this.btnTovábbiinfómentés_Click);
+            // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -437,6 +615,9 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addPatientBindingSource)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -479,5 +660,21 @@
         private hospitalDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtbetegid;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnTovábbiinfómentés;
+        private System.Windows.Forms.ComboBox combomutettipus;
+        private System.Windows.Forms.ComboBox combokellmutet;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtgyógyszer;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox txtdiagnózis;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox txtjelenség;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }
