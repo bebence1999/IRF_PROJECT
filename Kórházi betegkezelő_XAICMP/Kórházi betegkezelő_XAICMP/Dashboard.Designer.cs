@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.btnPáciens = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnDiagnózis = new System.Windows.Forms.Button();
@@ -41,26 +43,47 @@
             this.lbl3nyil = new System.Windows.Forms.Label();
             this.lbl4nyil = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.Név = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.btnMentés = new System.Windows.Forms.Button();
+            this.txtPáciensID = new System.Windows.Forms.TextBox();
+            this.txtBetegség = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.Név = new System.Windows.Forms.Label();
+            this.comboboxNem = new System.Windows.Forms.ComboBox();
+            this.txtCím = new System.Windows.Forms.TextBox();
+            this.txtSzám = new System.Windows.Forms.TextBox();
+            this.txtKor = new System.Windows.Forms.TextBox();
+            this.txtVércsoport = new System.Windows.Forms.TextBox();
+            this.txtNév = new System.Windows.Forms.TextBox();
+            this.hospitalDataSet = new Kórházi_betegkezelő_XAICMP.hospitalDataSet();
+            this.addPatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.addPatientTableAdapter = new Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.AddPatientTableAdapter();
+            this.tableAdapterManager = new Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.TableAdapterManager();
+            this.addPatientBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.addPatientBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addPatientBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addPatientBindingNavigator)).BeginInit();
+            this.addPatientBindingNavigator.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnPáciens
@@ -208,9 +231,9 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox7);
-            this.panel1.Controls.Add(this.textBox6);
+            this.panel1.Controls.Add(this.btnMentés);
+            this.panel1.Controls.Add(this.txtPáciensID);
+            this.panel1.Controls.Add(this.txtBetegség);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label8);
@@ -219,113 +242,59 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.Név);
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.comboboxNem);
+            this.panel1.Controls.Add(this.txtCím);
+            this.panel1.Controls.Add(this.txtSzám);
+            this.panel1.Controls.Add(this.txtKor);
+            this.panel1.Controls.Add(this.txtVércsoport);
+            this.panel1.Controls.Add(this.txtNév);
             this.panel1.Location = new System.Drawing.Point(181, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(625, 346);
             this.panel1.TabIndex = 15;
             // 
-            // textBox1
+            // label10
             // 
-            this.textBox1.Location = new System.Drawing.Point(178, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(417, 20);
-            this.textBox1.TabIndex = 0;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label10.Location = new System.Drawing.Point(189, 5);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(297, 20);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "1. Lépés: Adj hozzá egy új pácienst!";
             // 
-            // textBox2
+            // btnMentés
             // 
-            this.textBox2.Location = new System.Drawing.Point(178, 188);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(417, 20);
-            this.textBox2.TabIndex = 1;
+            this.btnMentés.Location = new System.Drawing.Point(520, 314);
+            this.btnMentés.Name = "btnMentés";
+            this.btnMentés.Size = new System.Drawing.Size(75, 23);
+            this.btnMentés.TabIndex = 25;
+            this.btnMentés.Text = "Mentés";
+            this.btnMentés.UseVisualStyleBackColor = true;
+            this.btnMentés.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
+            // txtPáciensID
             // 
-            this.textBox3.Location = new System.Drawing.Point(178, 134);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(417, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtPáciensID.Location = new System.Drawing.Point(53, 314);
+            this.txtPáciensID.Name = "txtPáciensID";
+            this.txtPáciensID.Size = new System.Drawing.Size(443, 20);
+            this.txtPáciensID.TabIndex = 24;
             // 
-            // textBox4
+            // txtBetegség
             // 
-            this.textBox4.Location = new System.Drawing.Point(178, 105);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(417, 20);
-            this.textBox4.TabIndex = 3;
+            this.txtBetegség.Location = new System.Drawing.Point(53, 257);
+            this.txtBetegség.Name = "txtBetegség";
+            this.txtBetegség.Size = new System.Drawing.Size(542, 20);
+            this.txtBetegség.TabIndex = 23;
             // 
-            // textBox5
+            // label9
             // 
-            this.textBox5.Location = new System.Drawing.Point(178, 72);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(417, 20);
-            this.textBox5.TabIndex = 4;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(178, 161);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(417, 21);
-            this.comboBox1.TabIndex = 16;
-            // 
-            // Név
-            // 
-            this.Név.AutoSize = true;
-            this.Név.Location = new System.Drawing.Point(142, 43);
-            this.Név.Name = "Név";
-            this.Név.Size = new System.Drawing.Size(30, 13);
-            this.Név.TabIndex = 17;
-            this.Név.Text = "Név:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(114, 194);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(61, 13);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Vércsoport:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(141, 166);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(32, 13);
-            this.label5.TabIndex = 19;
-            this.label5.Text = "Nem:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(142, 136);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "Kor:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(101, 108);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(74, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Kontakt szám:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(143, 76);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(29, 13);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Cím:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(50, 297);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(62, 13);
+            this.label9.TabIndex = 20;
+            this.label9.Text = "Páciens ID:";
             // 
             // label3
             // 
@@ -336,54 +305,258 @@
             this.label3.TabIndex = 19;
             this.label3.Text = "Korábbi súlyos betegség:";
             // 
-            // label9
+            // label8
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(50, 301);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 20;
-            this.label9.Text = "Páciens ID:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(143, 76);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(29, 13);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Cím:";
             // 
-            // textBox6
+            // label7
             // 
-            this.textBox6.Location = new System.Drawing.Point(53, 257);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(542, 20);
-            this.textBox6.TabIndex = 23;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(101, 108);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(74, 13);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Kontakt szám:";
             // 
-            // textBox7
+            // label6
             // 
-            this.textBox7.Location = new System.Drawing.Point(53, 317);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(443, 20);
-            this.textBox7.TabIndex = 24;
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(142, 136);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "Kor:";
             // 
-            // button1
+            // label5
             // 
-            this.button1.Location = new System.Drawing.Point(520, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 25;
-            this.button1.Text = "Mentés";
-            this.button1.UseVisualStyleBackColor = true;
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(141, 166);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(32, 13);
+            this.label5.TabIndex = 19;
+            this.label5.Text = "Nem:";
             // 
-            // label10
+            // label4
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label10.Location = new System.Drawing.Point(189, 3);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(297, 20);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "1. Lépés: Adj hozzá egy új pácienst!";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(114, 194);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(61, 13);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Vércsoport:";
+            // 
+            // Név
+            // 
+            this.Név.AutoSize = true;
+            this.Név.Location = new System.Drawing.Point(142, 43);
+            this.Név.Name = "Név";
+            this.Név.Size = new System.Drawing.Size(30, 13);
+            this.Név.TabIndex = 17;
+            this.Név.Text = "Név:";
+            // 
+            // comboboxNem
+            // 
+            this.comboboxNem.FormattingEnabled = true;
+            this.comboboxNem.Items.AddRange(new object[] {
+            "Férfi",
+            "Nő",
+            "Egyéb"});
+            this.comboboxNem.Location = new System.Drawing.Point(178, 161);
+            this.comboboxNem.Name = "comboboxNem";
+            this.comboboxNem.Size = new System.Drawing.Size(417, 21);
+            this.comboboxNem.TabIndex = 16;
+            // 
+            // txtCím
+            // 
+            this.txtCím.Location = new System.Drawing.Point(178, 72);
+            this.txtCím.Name = "txtCím";
+            this.txtCím.Size = new System.Drawing.Size(417, 20);
+            this.txtCím.TabIndex = 4;
+            // 
+            // txtSzám
+            // 
+            this.txtSzám.Location = new System.Drawing.Point(178, 105);
+            this.txtSzám.Name = "txtSzám";
+            this.txtSzám.Size = new System.Drawing.Size(417, 20);
+            this.txtSzám.TabIndex = 3;
+            // 
+            // txtKor
+            // 
+            this.txtKor.Location = new System.Drawing.Point(178, 134);
+            this.txtKor.Name = "txtKor";
+            this.txtKor.Size = new System.Drawing.Size(417, 20);
+            this.txtKor.TabIndex = 2;
+            // 
+            // txtVércsoport
+            // 
+            this.txtVércsoport.Location = new System.Drawing.Point(178, 188);
+            this.txtVércsoport.Name = "txtVércsoport";
+            this.txtVércsoport.Size = new System.Drawing.Size(417, 20);
+            this.txtVércsoport.TabIndex = 1;
+            // 
+            // txtNév
+            // 
+            this.txtNév.Location = new System.Drawing.Point(178, 40);
+            this.txtNév.Name = "txtNév";
+            this.txtNév.Size = new System.Drawing.Size(417, 20);
+            this.txtNév.TabIndex = 0;
+            // 
+            // hospitalDataSet
+            // 
+            this.hospitalDataSet.DataSetName = "hospitalDataSet";
+            this.hospitalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // addPatientBindingSource
+            // 
+            this.addPatientBindingSource.DataMember = "AddPatient";
+            this.addPatientBindingSource.DataSource = this.hospitalDataSet;
+            // 
+            // addPatientTableAdapter
+            // 
+            this.addPatientTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.AddPatientTableAdapter = this.addPatientTableAdapter;
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UpdateOrder = Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // addPatientBindingNavigator
+            // 
+            this.addPatientBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.addPatientBindingNavigator.BindingSource = this.addPatientBindingSource;
+            this.addPatientBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.addPatientBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.addPatientBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.addPatientBindingNavigatorSaveItem});
+            this.addPatientBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.addPatientBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.addPatientBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.addPatientBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.addPatientBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.addPatientBindingNavigator.Name = "addPatientBindingNavigator";
+            this.addPatientBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.addPatientBindingNavigator.Size = new System.Drawing.Size(826, 25);
+            this.addPatientBindingNavigator.TabIndex = 16;
+            this.addPatientBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 15);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // addPatientBindingNavigatorSaveItem
+            // 
+            this.addPatientBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.addPatientBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("addPatientBindingNavigatorSaveItem.Image")));
+            this.addPatientBindingNavigatorSaveItem.Name = "addPatientBindingNavigatorSaveItem";
+            this.addPatientBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
+            this.addPatientBindingNavigatorSaveItem.Text = "Save Data";
+            this.addPatientBindingNavigatorSaveItem.Click += new System.EventHandler(this.addPatientBindingNavigatorSaveItem_Click);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(825, 452);
+            this.ClientSize = new System.Drawing.Size(826, 647);
+            this.Controls.Add(this.addPatientBindingNavigator);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl4nyil);
             this.Controls.Add(this.lbl3nyil);
@@ -403,6 +576,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addPatientBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addPatientBindingNavigator)).EndInit();
+            this.addPatientBindingNavigator.ResumeLayout(false);
+            this.addPatientBindingNavigator.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -424,9 +602,9 @@
         private System.Windows.Forms.Label lbl4nyil;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Button btnMentés;
+        private System.Windows.Forms.TextBox txtPáciensID;
+        private System.Windows.Forms.TextBox txtBetegség;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label8;
@@ -435,11 +613,28 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Név;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboboxNem;
+        private System.Windows.Forms.TextBox txtCím;
+        private System.Windows.Forms.TextBox txtSzám;
+        private System.Windows.Forms.TextBox txtKor;
+        private System.Windows.Forms.TextBox txtVércsoport;
+        private System.Windows.Forms.TextBox txtNév;
+        private hospitalDataSet hospitalDataSet;
+        private System.Windows.Forms.BindingSource addPatientBindingSource;
+        private hospitalDataSetTableAdapters.AddPatientTableAdapter addPatientTableAdapter;
+        private hospitalDataSetTableAdapters.TableAdapterManager tableAdapterManager;
+        private System.Windows.Forms.BindingNavigator addPatientBindingNavigator;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton addPatientBindingNavigatorSaveItem;
     }
 }

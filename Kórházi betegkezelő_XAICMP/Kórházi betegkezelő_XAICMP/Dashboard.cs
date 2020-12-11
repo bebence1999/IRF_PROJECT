@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -58,7 +59,52 @@ namespace Kórházi_betegkezelő_XAICMP
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'hospitalDataSet.AddPatient' table. You can move, or remove it, as needed.
+            this.addPatientTableAdapter.Fill(this.hospitalDataSet.AddPatient);
             panel1.Visible = false;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                string név = txtNév.Text;
+                string cím = txtCím.Text;
+                string kontakt = txtSzám.Text;
+                string kor = txtKor.Text;
+                string nem = comboboxNem.Text;
+                string vércsoport = txtVércsoport.Text;
+                string korábbibetegség = txtBetegség.Text;
+
+
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = con;
+
+                cmd.CommandText = "insert into AddPatient2 (Név, Cím, Telefonszám, Kor, Nem, Vércsoport, KorábbiBetegség) values ('" + név + "', '" + cím + "', '" + kontakt + "','" + kor + "', '" + nem + "', '" + vércsoport + "', '" + korábbibetegség + "')";
+
+                SqlDataAdapter DA = new SqlDataAdapter(cmd);
+                DataSet DS = new DataSet();
+                DA.Fill(DS);
+                MessageBox.Show("Új páciens felvéve!");
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Nem ment valami.");
+            }
+
+
+        }
+
+        private void addPatientBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.addPatientBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hospitalDataSet);
+
         }
     }
 }
