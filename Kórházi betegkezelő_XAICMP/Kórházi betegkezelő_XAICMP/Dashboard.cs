@@ -77,6 +77,7 @@ namespace Kórházi_betegkezelő_XAICMP
                 string nem = comboboxNem.Text;
                 string vércsoport = txtVércsoport.Text;
                 string korábbibetegség = txtBetegség.Text;
+                int BetegID = Convert.ToInt32(txtbetegid.Text);
 
 
                 SqlConnection con = new SqlConnection();
@@ -84,7 +85,7 @@ namespace Kórházi_betegkezelő_XAICMP
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "insert into AddPatient2 (Név, Cím, Telefonszám, Kor, Nem, Vércsoport, KorábbiBetegség) values ('" + név + "', '" + cím + "', '" + kontakt + "','" + kor + "', '" + nem + "', '" + vércsoport + "', '" + korábbibetegség + "')";
+                cmd.CommandText = "insert into AddPatient3 (BetegID, Név, Cím, Telefonszám, Kor, Nem, Vércsoport, KorábbiBetegség) values ("+BetegID+",'" + név + "', '" + cím + "', '" + kontakt + "','" + kor + "', '" + nem + "', '" + vércsoport + "', '" + korábbibetegség + "')";
 
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
                 DataSet DS = new DataSet();
@@ -95,7 +96,14 @@ namespace Kórházi_betegkezelő_XAICMP
             {
                 MessageBox.Show("Nem ment valami.");
             }
-
+            txtNév.Clear();
+            txtbetegid.Clear();
+            txtSzám.Clear();
+            txtCím.Clear();
+            txtKor.Clear();
+            comboboxNem.ResetText();
+            txtVércsoport.Clear();
+            txtBetegség.Clear();
 
         }
 
