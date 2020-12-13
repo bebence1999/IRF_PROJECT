@@ -13,6 +13,7 @@ namespace Kórházi_betegkezelő_XAICMP
 {
     public partial class Dashboard : Form
     {
+
         public Dashboard()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace Kórházi_betegkezelő_XAICMP
 
             panel1.Visible = true;
             panel2.Visible = false;
+            panel3.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -37,6 +39,7 @@ namespace Kórházi_betegkezelő_XAICMP
 
             //panel1.Visible = false;
             panel2.Visible = true;
+            panel3.Visible = false;
             
         }
 
@@ -48,6 +51,23 @@ namespace Kórházi_betegkezelő_XAICMP
             lbl2nyil.ForeColor = System.Drawing.Color.Black;
             lbl3nyil.ForeColor = System.Drawing.Color.Red;
             lbl4nyil.ForeColor = System.Drawing.Color.Black;
+
+            panel3.Visible = true;
+            panel1.Visible = false;
+            panel2.Visible = false;
+
+            
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from AddPatient3 inner join PatientMore on AddPatient3.BetegID = PatientMore.betegid";
+            SqlDataAdapter DA = new SqlDataAdapter(cmd);
+            DataSet DS = new DataSet();
+            DA.Fill(DS);
+            dataGridView2.DataSource = DS.Tables[0];
+
         }
 
         private void btnRandomTipp_Click(object sender, EventArgs e)
@@ -66,15 +86,25 @@ namespace Kórházi_betegkezelő_XAICMP
         private void Dashboard_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'hospitalDataSet.AddPatient' table. You can move, or remove it, as needed.
-            this.addPatientTableAdapter.Fill(this.hospitalDataSet.AddPatient);
+            //this.addPatientTableAdapter.Fill(this.hospitalDataSet.AddPatient);
             panel1.Visible = false;
             panel2.Visible = false;
+            panel3.Visible = false;
         }
 
+        //private List<PáciensFelvétel> lista = new List<PáciensFelvétel>();
+        private void label18_Click(object sender, EventArgs e)
+        {
+            
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
+                //PáciensFelvétel páciens = new PáciensFelvétel(txtNév.Text, txtCím.Text, txtSzám.Text, txtKor.Text, comboboxNem.Text, txtVércsoport.Text, txtBetegség.Text, Convert.ToInt32(txtbetegid.Text));
+
+                //lista.Add(páciens);
+
 
 
                 string név = txtNév.Text;
@@ -176,8 +206,16 @@ namespace Kórházi_betegkezelő_XAICMP
                 MessageBox.Show("Valami nem oké...üres mező vagy rossz formátum.");
             }
 
+            textBox1.Clear();
+            txtjelenség.Clear();
+            txtgyógyszer.Clear();
+            txtdiagnózis.Clear();
+            combokellmutet.ResetText();
+            combomutettipus.ResetText();
 
 
         }
+
+        
     }
 }
