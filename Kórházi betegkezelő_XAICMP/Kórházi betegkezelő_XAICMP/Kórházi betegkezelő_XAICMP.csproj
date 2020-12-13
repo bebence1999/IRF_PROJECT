@@ -66,6 +66,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PáciensFelvétel.cs" />
+    <Compile Include="RandomTipp.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>

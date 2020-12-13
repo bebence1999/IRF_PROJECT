@@ -53,8 +53,9 @@ namespace Kórházi_betegkezelő_XAICMP
             lbl4nyil.ForeColor = System.Drawing.Color.Black;
 
             panel3.Visible = true;
-            panel1.Visible = false;
-            panel2.Visible = false;
+            //panel1.Visible = false
+            //panel2.Visible = false;
+            panel4.Visible = false;
 
             
             SqlConnection con = new SqlConnection();
@@ -76,6 +77,9 @@ namespace Kórházi_betegkezelő_XAICMP
             lbl2nyil.ForeColor = System.Drawing.Color.Black;
             lbl3nyil.ForeColor = System.Drawing.Color.Black;
             lbl4nyil.ForeColor = System.Drawing.Color.Red;
+
+            panel4.Visible = true;
+            
         }
 
         private void btnKilépés_Click(object sender, EventArgs e)
@@ -216,6 +220,45 @@ namespace Kórházi_betegkezelő_XAICMP
 
         }
 
+        int vicc;
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            //pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp";
+
+            Random rnd = new Random();
+            vicc = rnd.Next(1,10);
+
+            switch (vicc)
+            {
+                case 1:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\1.jpg";
+                break;
+                case 2:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\2.jpg";
+                    break;
+                case 3:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\3.jpg";
+                    break;
+                case 4:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\4.jpg";
+                    break;
+                case 5:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\5.jpg";
+                    break;
+                case 6:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\6.jpg";
+                    break;
+                case 7:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\7.jpg";
+                    break;
+                case 8:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\8.jpg";
+                    break;
+                case 9:
+                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\9.jpg";
+                    break;
+            }
         
+        }
     }
 }

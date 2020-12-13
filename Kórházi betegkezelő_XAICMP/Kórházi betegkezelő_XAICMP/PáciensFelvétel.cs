@@ -17,8 +17,10 @@ namespace Kórházi_betegkezelő_XAICMP
         //public string korábbibetegség { get; set; }
         //public int betegid { get; set; }
 
-         public PáciensFelvétel(string név, string cím, string kontakt, string kor, string nem, string vércsoport, string korábbibetegség, int betegid)
+        public PáciensFelvétel(string név, string cím, string kontakt, string kor, string nem, string vércsoport, string korábbibetegség, int betegid)
         {
+            
+
             //this.név = név;
             //this.cím = cím;
             //this.kontakt = kontakt;
