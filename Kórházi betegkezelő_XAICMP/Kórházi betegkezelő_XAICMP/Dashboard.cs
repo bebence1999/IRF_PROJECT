@@ -17,6 +17,7 @@ namespace Kórházi_betegkezelő_XAICMP
         public Dashboard()
         {
             InitializeComponent();
+            
         }
         private void btnPáciens_Click(object sender, EventArgs e)
         {
@@ -59,7 +60,7 @@ namespace Kórházi_betegkezelő_XAICMP
 
             
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+            con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\hospital.mdf;Integrated Security=True";
 
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
@@ -70,17 +71,38 @@ namespace Kórházi_betegkezelő_XAICMP
             dataGridView2.DataSource = DS.Tables[0];
 
         }
+        private void CSV(List<PáciensFelvétel> páciens, string filepath)
+        {
+            try
+            {
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(filepath, false))
+                {
+                    for (int i = 0; i < páciens.Count; i++)
+                    {
+                        file.WriteLine(páciens[i].betegid.ToString() + "," + páciens[i].cím.ToString() + "," + páciens[i].kontakt.ToString() + "," + páciens[i].kor.ToString() + "," + páciens[i].korábbibetegség.ToString() + "," + páciens[i].nem.ToString() + "," + páciens[i].név.ToString() + "," + páciens[i].vércsoport.ToString());
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void btnExport_Click(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
 
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = "select * from AddPatient3 inner join PatientMore on AddPatient3.BetegID = PatientMore.betegid";
-            SqlDataAdapter DA = new SqlDataAdapter(cmd);
-            DataSet DS = new DataSet();
-            DA.Fill(DS);
+            //SqlConnection con = new SqlConnection();
+            //con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\hospital.mdf;Integrated Security=True";
+
+            //SqlCommand cmd = new SqlCommand();
+            //cmd.Connection = con;
+            //cmd.CommandText = "select * from AddPatient3 inner join PatientMore on AddPatient3.BetegID = PatientMore.betegid";
+            //SqlDataAdapter DA = new SqlDataAdapter(cmd);
+            //DataSet DS = new DataSet();
+            //DA.Fill(DS);
+
+            CSV(felvétel, "pácienesek.txt");
 
             
             
@@ -131,7 +153,7 @@ namespace Kórházi_betegkezelő_XAICMP
 
 
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\hospital.mdf;Integrated Security=True";
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
@@ -177,7 +199,7 @@ namespace Kórházi_betegkezelő_XAICMP
 
                 int betegid = Convert.ToInt32(textBox1.Text);
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\hospital.mdf;Integrated Security=True";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
@@ -206,7 +228,7 @@ namespace Kórházi_betegkezelő_XAICMP
 
                 
                 SqlConnection con = new SqlConnection();
-                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+                con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\hospital.mdf;Integrated Security=True";
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
