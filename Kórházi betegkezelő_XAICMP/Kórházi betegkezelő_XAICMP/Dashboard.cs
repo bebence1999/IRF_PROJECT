@@ -146,14 +146,14 @@ namespace Kórházi_betegkezelő_XAICMP
             {
                 MessageBox.Show("Nem ment valami.");
             }
-            txtNév.Clear();
-            txtbetegid.Clear();
-            txtSzám.Clear();
-            txtCím.Clear();
-            txtKor.Clear();
-            comboboxNem.ResetText();
-            txtVércsoport.Clear();
-            txtBetegség.Clear();
+            //txtNév.Clear();
+            //txtbetegid.Clear();
+            //txtSzám.Clear();
+            //txtCím.Clear();
+            //txtKor.Clear();
+            //comboboxNem.ResetText();
+            //txtVércsoport.Clear();
+            //txtBetegség.Clear();
 
         }
 
