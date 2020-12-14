@@ -101,8 +101,18 @@ namespace Kórházi_betegkezelő_XAICMP
             //SqlDataAdapter DA = new SqlDataAdapter(cmd);
             //DataSet DS = new DataSet();
             //DA.Fill(DS);
+            try
+            {
+                CSV(felvétel, "pácienesek.txt");
+                MessageBox.Show("Sikeres adatexport. Nézd meg a Bin/Debug mappát és keresd a páciensek.txt nevű file-t.");
+            }
+            catch (Exception)
+            {
 
-            CSV(felvétel, "pácienesek.txt");
+                MessageBox.Show("Valami nem oké!");
+            }
+            
+
 
             
             
