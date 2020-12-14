@@ -146,14 +146,14 @@ namespace Kórházi_betegkezelő_XAICMP
             {
                 MessageBox.Show("Nem ment valami.");
             }
-            //txtNév.Clear();
-            //txtbetegid.Clear();
-            //txtSzám.Clear();
-            //txtCím.Clear();
-            //txtKor.Clear();
-            //comboboxNem.ResetText();
-            //txtVércsoport.Clear();
-            //txtBetegség.Clear();
+            txtNév.Clear();
+            txtbetegid.Clear();
+            txtSzám.Clear();
+            txtCím.Clear();
+            txtKor.Clear();
+            comboboxNem.ResetText();
+            txtVércsoport.Clear();
+            txtBetegség.Clear();
 
         }
 
@@ -189,17 +189,20 @@ namespace Kórházi_betegkezelő_XAICMP
                 
             }
         }
-
+        private List<PáciensMore> pácimore = new List<PáciensMore>();
         private void btnTovábbiinfómentés_Click(object sender, EventArgs e)
         {
             try
             {
-                int betegid = Convert.ToInt32(textBox1.Text);
-                string jelenség = txtjelenség.Text;
-                string diagnózis = txtdiagnózis.Text;
-                string gyógyszer = txtgyógyszer.Text;
-                string kellmutet = combokellmutet.Text;
-                string mutettipus = combomutettipus.Text;
+                PáciensMore more = new PáciensMore(Convert.ToInt32(textBox1.Text), txtjelenség.Text, txtdiagnózis.Text, txtgyógyszer.Text, combokellmutet.Text, combomutettipus.Text);
+                pácimore.Add(more);
+
+                //int betegid = Convert.ToInt32(textBox1.Text);
+                //string jelenség = txtjelenség.Text;
+                //string diagnózis = txtdiagnózis.Text;
+                //string gyógyszer = txtgyógyszer.Text;
+                //string kellmutet = combokellmutet.Text;
+                //string mutettipus = combomutettipus.Text;
 
                 
                 SqlConnection con = new SqlConnection();
@@ -207,7 +210,7 @@ namespace Kórházi_betegkezelő_XAICMP
 
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = "insert into PatientMore (betegid, jelenségek, diagnózis, gyógyszer, kellműtét, műtéttípus) values (" + betegid + ", '" + jelenség + "', '" + diagnózis + "', '" + gyógyszer + "', '" + kellmutet + "', '" + mutettipus + "')";
+                cmd.CommandText = "insert into PatientMore (betegid, jelenségek, diagnózis, gyógyszer, kellműtét, műtéttípus) values (" + more.betegid + ", '" + more.jelenség + "', '" + more.diagnózis + "', '" + more.gyógyszer + "', '" + more.kellműtét + "', '" + more.műtéttípus + "')";
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
                 DataSet DS = new DataSet();
                 DA.Fill(DS);
