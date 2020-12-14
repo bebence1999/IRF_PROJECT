@@ -70,6 +70,21 @@ namespace Kórházi_betegkezelő_XAICMP
             dataGridView2.DataSource = DS.Tables[0];
 
         }
+        private void btnExport_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;database=hospital;Integrated Security=True";
+
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = con;
+            cmd.CommandText = "select * from AddPatient3 inner join PatientMore on AddPatient3.BetegID = PatientMore.betegid";
+            SqlDataAdapter DA = new SqlDataAdapter(cmd);
+            DataSet DS = new DataSet();
+            DA.Fill(DS);
+
+            
+            
+        }
 
         private void btnRandomTipp_Click(object sender, EventArgs e)
         {
@@ -95,30 +110,24 @@ namespace Kórházi_betegkezelő_XAICMP
             panel2.Visible = false;
             panel3.Visible = false;
         }
-
+        
         //private List<PáciensFelvétel> lista = new List<PáciensFelvétel>();
         private void label18_Click(object sender, EventArgs e)
         {
             
         }
+        private List<PáciensFelvétel> felvétel = new List<PáciensFelvétel>();
         private void button1_Click(object sender, EventArgs e)
         {
             try
             {
-                //PáciensFelvétel páciens = new PáciensFelvétel(txtNév.Text, txtCím.Text, txtSzám.Text, txtKor.Text, comboboxNem.Text, txtVércsoport.Text, txtBetegség.Text, Convert.ToInt32(txtbetegid.Text));
+                PáciensFelvétel páciens = new PáciensFelvétel(txtNév.Text, txtCím.Text, txtSzám.Text, txtKor.Text, comboboxNem.Text, txtVércsoport.Text, txtBetegség.Text, Convert.ToInt32(txtbetegid.Text));
 
-                //lista.Add(páciens);
+                felvétel.Add(páciens);
 
 
 
-                string név = txtNév.Text;
-                string cím = txtCím.Text;
-                string kontakt = txtSzám.Text;
-                string kor = txtKor.Text;
-                string nem = comboboxNem.Text;
-                string vércsoport = txtVércsoport.Text;
-                string korábbibetegség = txtBetegség.Text;
-                int BetegID = Convert.ToInt32(txtbetegid.Text);
+                
 
 
                 SqlConnection con = new SqlConnection();
@@ -126,7 +135,7 @@ namespace Kórházi_betegkezelő_XAICMP
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = con;
 
-                cmd.CommandText = "insert into AddPatient3 (BetegID, Név, Cím, Telefonszám, Kor, Nem, Vércsoport, KorábbiBetegség) values ("+BetegID+",'" + név + "', '" + cím + "', '" + kontakt + "','" + kor + "', '" + nem + "', '" + vércsoport + "', '" + korábbibetegség + "')";
+                cmd.CommandText = "insert into AddPatient3 (BetegID, Név, Cím, Telefonszám, Kor, Nem, Vércsoport, KorábbiBetegség) values ("+páciens.betegid+",'" + páciens.név + "', '" + páciens.cím + "', '" + páciens.kontakt + "','" + páciens.kor + "', '" + páciens.nem + "', '" + páciens.vércsoport + "', '" + páciens.korábbibetegség + "')";
 
                 SqlDataAdapter DA = new SqlDataAdapter(cmd);
                 DataSet DS = new DataSet();
@@ -219,6 +228,7 @@ namespace Kórházi_betegkezelő_XAICMP
 
 
         }
+        
 
         int vicc;
         private void button1_Click_1(object sender, EventArgs e)
@@ -260,5 +270,7 @@ namespace Kórházi_betegkezelő_XAICMP
             }
         
         }
+
+        
     }
 }

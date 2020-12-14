@@ -65,6 +65,7 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnVicc = new System.Windows.Forms.Button();
+            this.btnExport = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnTovábbiinfómentés = new System.Windows.Forms.Button();
@@ -444,6 +445,7 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.btnExport);
             this.panel3.Controls.Add(this.label19);
             this.panel3.Controls.Add(this.dataGridView2);
             this.panel3.Location = new System.Drawing.Point(0, 0);
@@ -482,6 +484,16 @@
             this.btnVicc.UseVisualStyleBackColor = false;
             this.btnVicc.Click += new System.EventHandler(this.button1_Click_1);
             // 
+            // btnExport
+            // 
+            this.btnExport.Location = new System.Drawing.Point(505, 159);
+            this.btnExport.Name = "btnExport";
+            this.btnExport.Size = new System.Drawing.Size(116, 21);
+            this.btnExport.TabIndex = 19;
+            this.btnExport.Text = "Export";
+            this.btnExport.UseVisualStyleBackColor = true;
+            this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -497,7 +509,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(4, 29);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(618, 313);
+            this.dataGridView2.Size = new System.Drawing.Size(497, 261);
             this.dataGridView2.TabIndex = 17;
             // 
             // btnTovábbiinfómentés
@@ -662,7 +674,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(826, 422);
+            this.ClientSize = new System.Drawing.Size(826, 475);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lbl4nyil);
@@ -757,5 +769,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnVicc;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button btnExport;
     }
 }
