@@ -14,10 +14,13 @@ namespace Kórházi_betegkezelő_XAICMP
     public partial class Dashboard : Form
     {
 
+        
+
         public Dashboard()
         {
             InitializeComponent();
             
+
         }
         private void btnPáciens_Click(object sender, EventArgs e)
         {
@@ -38,7 +41,7 @@ namespace Kórházi_betegkezelő_XAICMP
             lbl3nyil.ForeColor = System.Drawing.Color.Black;
             lbl4nyil.ForeColor = System.Drawing.Color.Black;
 
-            //panel1.Visible = false;
+            
             panel2.Visible = true;
             panel3.Visible = false;
             
@@ -54,11 +57,10 @@ namespace Kórházi_betegkezelő_XAICMP
             lbl4nyil.ForeColor = System.Drawing.Color.Black;
 
             panel3.Visible = true;
-            //panel1.Visible = false
-            //panel2.Visible = false;
+            
             panel4.Visible = false;
 
-            
+
             SqlConnection con = new SqlConnection();
             con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\hospital.mdf;Integrated Security=True";
 
@@ -92,15 +94,7 @@ namespace Kórházi_betegkezelő_XAICMP
         private void btnExport_Click(object sender, EventArgs e)
         {
 
-            //SqlConnection con = new SqlConnection();
-            //con.ConnectionString = "Data Source=(LocalDb)\\MSSQLLocalDB;AttachDbFilename=C:\\Temp\\hospital.mdf;Integrated Security=True";
-
-            //SqlCommand cmd = new SqlCommand();
-            //cmd.Connection = con;
-            //cmd.CommandText = "select * from AddPatient3 inner join PatientMore on AddPatient3.BetegID = PatientMore.betegid";
-            //SqlDataAdapter DA = new SqlDataAdapter(cmd);
-            //DataSet DS = new DataSet();
-            //DA.Fill(DS);
+            
             try
             {
                 CSV(felvétel, "pácienesek.txt");
@@ -136,14 +130,13 @@ namespace Kórházi_betegkezelő_XAICMP
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'hospitalDataSet.AddPatient' table. You can move, or remove it, as needed.
-            //this.addPatientTableAdapter.Fill(this.hospitalDataSet.AddPatient);
+            
             panel1.Visible = false;
             panel2.Visible = false;
             panel3.Visible = false;
         }
         
-        //private List<PáciensFelvétel> lista = new List<PáciensFelvétel>();
+        
         private void label18_Click(object sender, EventArgs e)
         {
             
@@ -229,12 +222,7 @@ namespace Kórházi_betegkezelő_XAICMP
                 PáciensMore more = new PáciensMore(Convert.ToInt32(textBox1.Text), txtjelenség.Text, txtdiagnózis.Text, txtgyógyszer.Text, combokellmutet.Text, combomutettipus.Text);
                 pácimore.Add(more);
 
-                //int betegid = Convert.ToInt32(textBox1.Text);
-                //string jelenség = txtjelenség.Text;
-                //string diagnózis = txtdiagnózis.Text;
-                //string gyógyszer = txtgyógyszer.Text;
-                //string kellmutet = combokellmutet.Text;
-                //string mutettipus = combomutettipus.Text;
+                
 
                 
                 SqlConnection con = new SqlConnection();
@@ -268,10 +256,10 @@ namespace Kórházi_betegkezelő_XAICMP
         int vicc;
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp";
+            
 
             Random rnd = new Random();
-            vicc = rnd.Next(1,10);
+            vicc = rnd.Next(1,8);
 
             switch (vicc)
             {
@@ -288,20 +276,15 @@ namespace Kórházi_betegkezelő_XAICMP
                     pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\4.jpg";
                     break;
                 case 5:
-                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\5.jpg";
-                    break;
-                case 6:
                     pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\6.jpg";
                     break;
-                case 7:
-                    pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\7.jpg";
-                    break;
-                case 8:
+                case 6:
                     pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\8.jpg";
                     break;
-                case 9:
+                case 7:
                     pictureBox2.ImageLocation = "C:\\Users\\Bence-Mr.Chatbee\\source\\repos\\IRF_PROJECT\\Kórházi betegkezelő_XAICMP\\Kórházi betegkezelő_XAICMP\\bin\\Debug\\Tipp\\9.jpg";
                     break;
+                
             }
         
         }
