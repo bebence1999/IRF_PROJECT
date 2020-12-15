@@ -83,10 +83,10 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.hospitalDataSet = new Kórházi_betegkezelő_XAICMP.hospitalDataSet();
+            //this.hospitalDataSet = new Kórházi_betegkezelő_XAICMP.hospitalDataSet();
             this.addPatientBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.addPatientTableAdapter = new Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.AddPatientTableAdapter();
-            this.tableAdapterManager = new Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.TableAdapterManager();
+            //this.addPatientTableAdapter = new Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.AddPatientTableAdapter();
+            //this.tableAdapterManager = new Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.TableAdapterManager();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -95,7 +95,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addPatientBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -651,23 +651,23 @@
             // 
             // hospitalDataSet
             // 
-            this.hospitalDataSet.DataSetName = "hospitalDataSet";
-            this.hospitalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            //this.hospitalDataSet.DataSetName = "hospitalDataSet";
+            //this.hospitalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // addPatientBindingSource
             // 
             this.addPatientBindingSource.DataMember = "AddPatient";
-            this.addPatientBindingSource.DataSource = this.hospitalDataSet;
+            //this.addPatientBindingSource.DataSource = this.hospitalDataSet;
             // 
             // addPatientTableAdapter
             // 
-            this.addPatientTableAdapter.ClearBeforeFill = true;
+            //this.addPatientTableAdapter.ClearBeforeFill = true;
             // 
             // tableAdapterManager
             // 
-            this.tableAdapterManager.AddPatientTableAdapter = this.addPatientTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UpdateOrder = Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            //this.tableAdapterManager.AddPatientTableAdapter = this.addPatientTableAdapter;
+            //this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            //this.tableAdapterManager.UpdateOrder = Kórházi_betegkezelő_XAICMP.hospitalDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // Dashboard
             // 
@@ -703,7 +703,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).EndInit();
+            //((System.ComponentModel.ISupportInitialize)(this.hospitalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addPatientBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -741,10 +741,7 @@
         private System.Windows.Forms.TextBox txtKor;
         private System.Windows.Forms.TextBox txtVércsoport;
         private System.Windows.Forms.TextBox txtNév;
-        private hospitalDataSet hospitalDataSet;
         private System.Windows.Forms.BindingSource addPatientBindingSource;
-        private hospitalDataSetTableAdapters.AddPatientTableAdapter addPatientTableAdapter;
-        private hospitalDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtbetegid;
         private System.Windows.Forms.Panel panel2;

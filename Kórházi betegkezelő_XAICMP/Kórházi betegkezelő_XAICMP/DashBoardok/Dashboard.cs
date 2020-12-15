@@ -13,7 +13,6 @@ namespace Kórházi_betegkezelő_XAICMP
 {
     public partial class Dashboard : Form
     {
-
         
 
         public Dashboard()
@@ -186,7 +185,7 @@ namespace Kórházi_betegkezelő_XAICMP
         {
             this.Validate();
             this.addPatientBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.hospitalDataSet);
+            //this.tableAdapterManager.UpdateAll(this.hospitalDataSet);
 
         }
 
